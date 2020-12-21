@@ -1,10 +1,13 @@
 package progexam.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "student")
 public class Student {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,6 +15,7 @@ public class Student {
 
     @ManyToOne
     @JoinColumn(name = "supervisor_id")
+    @JsonManagedReference
     private Supervisor supervisor;
 
     @Column

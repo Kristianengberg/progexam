@@ -5,9 +5,7 @@ import progexam.demo.model.Student;
 import progexam.demo.repositories.StudentRepository;
 import progexam.demo.service.StudentService;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class StudentJPA implements StudentService {
@@ -18,10 +16,10 @@ public class StudentJPA implements StudentService {
     }
 
     @Override
-    public Set<Student> findAll() {
-        Set<Student> set = new HashSet<>();
-        studentRepository.findAll().forEach(set::add); // tilføjer alle elementer til set
-        return set;
+    public List<Student> findAll() {
+        List<Student> list = new ArrayList<>();
+        studentRepository.findAll().forEach(list::add);
+        return list;
     }
 
     @Override

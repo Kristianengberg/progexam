@@ -1,13 +1,12 @@
 package progexam.demo.service.springdatajpa;
 
+import net.bytebuddy.implementation.bind.annotation.Super;
 import org.springframework.stereotype.Service;
 import progexam.demo.model.Supervisor;
 import progexam.demo.repositories.SupervisorRepository;
 import progexam.demo.service.SupervisorService;
 
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class SupervisorJPA implements SupervisorService {
@@ -18,10 +17,10 @@ public class SupervisorJPA implements SupervisorService {
     }
 
     @Override
-    public Set<Supervisor> findAll() {
-        Set<Supervisor> set = new HashSet<>();
-        supervisorRepository.findAll().forEach(set::add); // tilføjer alle elementer til set
-        return set;
+    public List<Supervisor> findAll() {
+        List<Supervisor> list = new ArrayList<>();
+        supervisorRepository.findAll().forEach(list::add);
+        return list;
     }
 
     @Override

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <script type="text/javascript" th:src="@{/js/getrequest.js}"></script>
+    <script type="text/javascript" th:src="@{/js/postrequest.js}"></script>
+    <script type="text/javascript" th:src="@{/js/functions.js}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<a href="/"><h2>Add Student:</h2></a>
+<!--<div>
+<form id="addform">
+    <label for="name">Name:</label>
+    <input type="text" id="name" value=""><br>
+    <label for="eMail">E-Mail:</label>
+    <input type="text" id="eMail" value=""><br>
+    <label for="supervisor">Supervisor:</label>
+    <input type="text" id="supervisor" value=""><br>
+    <input type="submit" value="Add Student">
+</form>
+</div>
+-->
+
+<div id="postResultDiv" align="center"></div>
+<div class="container">
+    <form id="studentForm">
+        <div>
+            <label for="name">Student Name:</label> <input type="text"
+                                                           id="name" placeholder="Enter Name"
+                                                           name="name">
+        </div>
+        <div >
+            <label for="eMail">Student Email:</label> <input type="text"
+                                                              id="eMail" placeholder="Enter Email"
+                                                             name="eMail">
+        </div>
+        <div>
+            <label for="supervisor">Supervisor :</label> <input type="text"
+                                                                 id="supervisor"
+                                                                placeholder="Input supervisor number"
+                                                                name="supervisor">
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+    <br/>
+
+
+
+        <div id="getResultDiv">
+            <h3>List of students:</h3>
+            <ul class="list-group">
+            </ul>
+        </div>
+
+</div>
+
+<div id="status">
+</div>
+
+
+<script type="text/javascript">
+    //   checkjQuery();
+    //   preventAddForm($("#addform"));
+    get();
+    post();
+
+</script>
+
+</body>
+</html>
